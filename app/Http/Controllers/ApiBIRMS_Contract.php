@@ -57,14 +57,11 @@ LIMIT 1';
 
 		$pid = $tender->pid;
 
-
+		
 		$items_sql = "SELECT * FROM 2016_birms_econtract.tpekerjaan where pid = '" . $pid .  "'";
 		$items = DB::select($items_sql);	
 
 		$tender_stage = array('pid' => $pid , 'items'=> $items );
-
-		$planning_tst = "http://localhost:8000/api/contracts/year/2016";
-
 
 		// $tender_slq = "SELECT * FROM 2016_birms_econtract.tpengadaan_pemenang";
 
@@ -138,7 +135,7 @@ LIMIT 1';
   //   						'tender' => $tender_stage
     						
   //   					  );
-    	return response()->json($planning_tst)->header('Access-Control-Allow-Origin', '*');
+    	return response()->json($tender_stage)->header('Access-Control-Allow-Origin', '*');
 
     	  // return response()->json($results)->header('Access-Control-Allow-Origin', '*');
 	  
